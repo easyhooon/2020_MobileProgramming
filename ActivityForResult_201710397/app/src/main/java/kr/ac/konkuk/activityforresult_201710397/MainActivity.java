@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         Button button = findViewById(R.id.button);
-        text1 = findViewById(R.id.text);
+        text1 = findViewById(R.id.text1);
         text2 = findViewById(R.id.text2);
 
         button.setOnClickListener((arg0) -> {

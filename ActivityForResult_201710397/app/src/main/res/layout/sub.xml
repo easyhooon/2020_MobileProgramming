@@ -33,6 +33,7 @@
             android:layout_weight="1"
             android:text="2차 데이터 입력">
         </Button>
+
     </LinearLayout>
 
 
@@ -58,6 +59,7 @@
             android:layout_weight="1"
             android:text="취소">
         </Button>
+
     </LinearLayout>
 
 </LinearLayout>
