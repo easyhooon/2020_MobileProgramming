@@ -8,34 +8,30 @@
         android:id="@+id/edit"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-        <requestFocus></requestFocus>
+
     </EditText>
 
     <LinearLayout
-        android:id="@+id/linearLayout2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center">
-
+        android:orientation="horizontal">
 
         <TextView
-            android:id="@+id/textInput2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:id="@+id/text_view_input2"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
             android:layout_weight="1"
-            android:text="                    2차 입력">
-        </TextView>
+            android:gravity="center"
+            android:text="2차 입력" />
 
         <Button
             android:id="@+id/button_input2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
             android:layout_weight="1"
-            android:text="2차 데이터 입력">
-        </Button>
+            android:text="2차 데이터 입력" />
 
     </LinearLayout>
-
 
     <LinearLayout
         android:id="@+id/linearLayout1"
@@ -43,23 +39,19 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center">
 
-
         <Button
             android:id="@+id/button_ok"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="입력완료">
-        </Button>
+            android:text="입력완료" />
 
         <Button
             android:id="@+id/button_cancel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="취소">
-        </Button>
-
+            android:text="취소" />
     </LinearLayout>
 
 </LinearLayout>

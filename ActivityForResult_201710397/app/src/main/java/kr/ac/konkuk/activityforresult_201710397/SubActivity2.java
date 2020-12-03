@@ -2,6 +2,7 @@ package kr.ac.konkuk.activityforresult_201710397;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
@@ -9,28 +10,47 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class SubActivity2 extends AppCompatActivity {
-    EditText edit2; //두번째 문자열 입력 TextView
-    Button button_ok2; // 문자열 입력 완료 버튼
-    Button button_cancel2; // 문자열 입력 취소 버튼
+
+    EditText editText; // 두 번째 문자열을 입력받을 EditText
+    Button buttonOk; // 문자열 입력 완료 버튼
+    Button buttonCancel; // 문자열 입력 취소 버튼
 
     @Override
-    public void onCreate(@Nullable Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.sub2);
 
-        edit2 = findViewById(R.id.edit2);
-        button_ok2 = findViewById(R.id.button_ok2);
-        button_ok2.setOnClickListener((v)->{
-            Intent intent = new Intent();
-            intent.putExtra(SubActivity.INPUT_TEXT, edit2.getText().toString()); //두번째 입력 문자열을 가져옴
-            setResult(RESULT_OK, intent); //결과값 완료
-            finish(); //subActivity2 종료
-        });
+        editText = (EditText) findViewById(R.id.edit_text);
+        buttonOk = (Button) findViewById(R.id.button_ok);
+        buttonCancel = (Button) findViewById(R.id.button_cancel);
 
-        button_cancel2 = findViewById(R.id.button_cancel2);
-        button_cancel2.setOnClickListener((v)->{
-            setResult(RESULT_CANCELED); // 결과값 취소
-            finish(); //subActivity2 종료
+        buttonOk.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent();
+                intent.putExtra(SubActivity.INPUT_TEXT, editText.getText().toString()); // 두 번째 문자열을 가져옴
+                setResult(RESULT_OK, intent); // 결과값(완료) 설정
+                finish(); // SubActivity2 종료
+            }
+        });
+        buttonCancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                setResult(RESULT_CANCELED); // 결과값(취소) 설정
+                finish(); // SubActivity2 종료
+            }
         });
     }
+
+//    public void onButtonOkClick() { // 문자열 입력 완료 코드
+//        Intent intent = new Intent();
+//        intent.putExtra(SubActivity.INPUT_TEXT, editText.getText().toString()); // 두 번째 문자열을 가져옴
+//        setResult(RESULT_OK, intent); // 결과값(완료) 설정
+//        finish(); // SubActivity2 종료
+//    }
+//
+//    public void onButtonCancelClick() { // 문자열 입력 취소 코드
+//        setResult(RESULT_CANCELED); // 결과값(취소) 설정
+//        finish(); // SubActivity2 종료
+//    }
 }
